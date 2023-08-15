@@ -39,21 +39,33 @@ void setupMode()
     // vest
     auto frontOutputs = PlaneMapper_Margin::mapMatrixCoordinates<AbstractActuator>({
       // clang-format off
-      {new PCA9685OutputWriter(pwm0, 0),  new PCA9685OutputWriter(pwm0, 1),  new PCA9685OutputWriter(pwm0, 2),  new PCA9685OutputWriter(pwm0, 3)},
+      /*{new PCA9685OutputWriter(pwm0, 0),  new PCA9685OutputWriter(pwm0, 1),  new PCA9685OutputWriter(pwm0, 2),  new PCA9685OutputWriter(pwm0, 3)},
       {new PCA9685OutputWriter(pwm0, 4),  new PCA9685OutputWriter(pwm0, 5),  new PCA9685OutputWriter(pwm0, 6),  new PCA9685OutputWriter(pwm0, 7)},
       {new PCA9685OutputWriter(pwm0, 8),  new PCA9685OutputWriter(pwm0, 9),  new PCA9685OutputWriter(pwm0, 10), new PCA9685OutputWriter(pwm0, 11)},
       {new PCA9685OutputWriter(pwm0, 12), new PCA9685OutputWriter(pwm0, 13), new PCA9685OutputWriter(pwm0, 14), new PCA9685OutputWriter(pwm0, 15)},
       {new PWMOutputWriter(32),           new PWMOutputWriter(33),           new PWMOutputWriter(25),           new PWMOutputWriter(26)},
+    */
+      {new PCA9685OutputWriter(pwm0, 4),  new PCA9685OutputWriter(pwm0, 12),  new PCA9685OutputWriter(pwm1, 4),  new PCA9685OutputWriter(pwm1, 12)},
+      {new PCA9685OutputWriter(pwm0, 3),  new PCA9685OutputWriter(pwm0, 11),  new PCA9685OutputWriter(pwm1, 3),  new PCA9685OutputWriter(pwm1, 11)},
+      {new PCA9685OutputWriter(pwm0, 2),  new PCA9685OutputWriter(pwm0, 10),  new PCA9685OutputWriter(pwm1, 2), new PCA9685OutputWriter(pwm1, 10)},
+      {new PCA9685OutputWriter(pwm0, 1), new PCA9685OutputWriter(pwm0, 9), new PCA9685OutputWriter(pwm1, 1), new PCA9685OutputWriter(pwm1, 9)},
+      {new PCA9685OutputWriter(pwm0, 0), new PCA9685OutputWriter(pwm0, 8), new PCA9685OutputWriter(pwm1, 0), new PCA9685OutputWriter(pwm1, 8)},
       // clang-format on
     });
     auto backOutputs = PlaneMapper_Margin::mapMatrixCoordinates<AbstractActuator>({
       // clang-format off
-      {new PCA9685OutputWriter(pwm1, 0),  new PCA9685OutputWriter(pwm1, 1),  new PCA9685OutputWriter(pwm1, 2),  new PCA9685OutputWriter(pwm1, 3)},
+      {new PCA9685OutputWriter(pwm0, 5),  new PCA9685OutputWriter(pwm0, 13),  new PCA9685OutputWriter(pwm1, 5),  new PCA9685OutputWriter(pwm1, 13)},
+      {new PCA9685OutputWriter(pwm0, 6),  new PCA9685OutputWriter(pwm0, 14),  new PCA9685OutputWriter(pwm1, 6),  new PCA9685OutputWriter(pwm1, 14)},
+      {new PCA9685OutputWriter(pwm0, 7),  new PCA9685OutputWriter(pwm0, 15),  new PCA9685OutputWriter(pwm1, 7), new PCA9685OutputWriter(pwm1, 15)},
+      {new PWMOutputWriter(27),           new PWMOutputWriter(14),           new PWMOutputWriter(12),           new PWMOutputWriter(13)},
+      {new PWMOutputWriter(32),           new PWMOutputWriter(33),           new PWMOutputWriter(25),           new PWMOutputWriter(26)},
+/*      {new PCA9685OutputWriter(pwm1, 0),  new PCA9685OutputWriter(pwm1, 1),  new PCA9685OutputWriter(pwm1, 2),  new PCA9685OutputWriter(pwm1, 3)},
       {new PCA9685OutputWriter(pwm1, 4),  new PCA9685OutputWriter(pwm1, 5),  new PCA9685OutputWriter(pwm1, 6),  new PCA9685OutputWriter(pwm1, 7)},
       {new PCA9685OutputWriter(pwm1, 8),  new PCA9685OutputWriter(pwm1, 9),  new PCA9685OutputWriter(pwm1, 10), new PCA9685OutputWriter(pwm1, 11)},
       {new PCA9685OutputWriter(pwm1, 12), new PCA9685OutputWriter(pwm1, 13), new PCA9685OutputWriter(pwm1, 14), new PCA9685OutputWriter(pwm1, 15)},
       {new PWMOutputWriter(27),           new PWMOutputWriter(14),           new PWMOutputWriter(12),           new PWMOutputWriter(13)},
-      // clang-format on
+      
+ */     // clang-format on
     });
 
     auto* chestFront = new HapticPlane_Closest(frontOutputs);
